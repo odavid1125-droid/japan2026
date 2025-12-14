@@ -1,0 +1,1031 @@
+<html lang="zh-TW"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4ZWQ3YTU3YzkyMTgwYzk0YjI2MzE3ZjMzYjY5MWE4MWRlNzYzNTEiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMzc0MTUyNzk0NjMwNDU4NDI5OCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjX2MyMTAwYzkyZTllMjBlNTZfaW5kZXguaHRtbC05MTkifSwiZXhwIjoxNzY1NzE2NzI2LCJpYXQiOjE3NjU3MTMxMjYsImFsZyI6IlJTMjU2In0.kFbADWTGUujCNu214LpIx-0e1RzPrQ_EEhT965Llp8dBffdD1_QrKPcI21AWDiknhXH1r_LRHWIdZac0SY2PXZQlCmR-Jg0T0SYQycxLzXhbweh76lQRzLxtQ6ZmuhTkunFgD9GYDqQBWJjnzAfzNRQWNtivWjLH98ZybE_wL_dNWIasj25ixrntSNMjcmgLiFrVOsAAmAHq_bgJzGh1SpSSDB4Z45LsyqQEL4zEsjvjhbbz0ozaECQkUpDGfL3zF6eTm9FTbKpWAcgB9KFGJ4fbWpAr4QqZvvLhzzb6xt8BzQTqFUk2T-fH58-geChjs3Ktrb8cxHh0MXECmpqLig","c_c2100c92e9e20e56_index.html-919")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>萬用旅遊神器</title>
+    
+    <!-- App Icon -->
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlDb5CAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0Q5Q0VBMjRDQzFBMTFFODg4NzhGMTE5OUY5MUE5QjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0Q5Q0VBMjVDQzFBMTFFODg4NzhGMTE5OUY5MUE5QjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozRDlDRUEyMkNDMUExMUU4ODg3OEYxMTk5RjkxQTlCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozRDlDRUEyM0NDMUExMUU4ODg3OEYxMTk5RjkxQTlCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq3k4HwAAABaSURBVHja7NoxDsAwCANB5P9/cwe11FYIqHCGxS15j0cAAAD80t25p6s6d3d16u6q1d1Vp7urTndXne6uOt1ddbq76nR31enuqtPdVae7q053V53urjrdXfUDxQG/ap642Y4AAAAASUVORK5CYII=">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlDb5CAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0Q5Q0VBMjRDQzFBMTFFODg4NzhGMTE5OUY5MUE5QjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0Q5Q0VBMjVDQzFBMTFFODg4NzhGMTE5OUY5MUE5QjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozRDlDRUEyMkNDMUExMUU4ODg3OEYxMTk5RjkxQTlCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozRDlDRUEyM0NDMUExMUU4ODg3OEYxMTk5RjkxQTlCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq3k4HwAAABaSURBVHja7NoxDsAwCANB5P9/cwe11FYIqHCGxS15j0cAAAD80t25p6s6d3d16u6q1d1Vp7urTndXne6uOt1ddbq76nR31enuqtPdVae7q053V53urjrdXfUDxQG/ap642Y4AAAAASUVORK5CYII=">
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,{&quot;name&quot;: &quot;%E8%90%AC%E7%94%A8%E6%97%85%E9%81%8A%E7%A5%9E%E5%99%A8&quot;, &quot;short_name&quot;: &quot;%E6%97%85%E9%81%8A%E7%A5%9E%E5%99%A8&quot;, &quot;start_url&quot;: &quot;.&quot;, &quot;display&quot;: &quot;standalone&quot;, &quot;background_color&quot;: &quot;%23F3F8FC&quot;, &quot;theme_color&quot;: &quot;%23ffffff&quot;, &quot;icons&quot;: [{&quot;src&quot;: &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlDb5CAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0Q5Q0VBMjRDQzFBMTFFODg4NzhGMTE5OUY5MUE5QjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0Q5Q0VBMjVDQzFBMTFFODg4NzhGMTE5OUY5MUE5QjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozRDlDRUEyMkNDMUExMUU4ODg3OEYxMTk5RjkxQTlCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozRDlDRUEyM0NDMUExMUU4ODg3OEYxMTk5RjkxQTlCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq3k4HwAAABaSURBVHja7NoxDsAwCANB5P9/cwe11FYIqHCGxS15j0cAAAD80t25p6s6d3d16u6q1d1Vp7urTndXne6uOt1ddbq76nR31enuqtPdVae7q053V53urjrdXfUDxQG/ap642Y4AAAAASUVORK5CYII=&quot;, &quot;sizes&quot;: &quot;192x192&quot;, &quot;type&quot;: &quot;image/png&quot;}]}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #F3F8FC;
+            color: #334155;
+            -webkit-tap-highlight-color: transparent;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .font-jp { font-family: 'Noto Sans JP', sans-serif; }
+        .font-kr { font-family: 'Noto Sans KR', sans-serif; }
+        
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+        .fade-enter-active, .fade-leave-active { transition: opacity 0.2s ease; }
+        .fade-enter-from, .fade-leave-to { opacity: 0; }
+        .slide-up-enter-active, .slide-up-leave-active { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .slide-up-enter-from { transform: translateY(100%); }
+        .slide-up-leave-to { transform: translateY(100%); }
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .safe-top { padding-top: env(safe-area-inset-top, 20px); }
+        .text-justify-custom { text-align: justify; text-justify: inter-ideograph; }
+        
+        /* Edit Mode Styles */
+        .edit-border { border: 2px dashed #f59e0b; background-color: #fffbeb; }
+        .edit-border:hover { border-color: #d97706; }
+        .input-bare { background: transparent; border: none; width: 100%; outline: none; }
+        .input-bare:focus { background: rgba(255,255,255,0.5); box-shadow: 0 0 0 2px #3b82f6; border-radius: 4px; }
+        
+        input[type="date"]::-webkit-calendar-picker-indicator {
+             filter: invert(0.5);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-2{bottom:-0.5rem}.-right-2{right:-0.5rem}.-right-6{right:-1.5rem}.-top-6{top:-1.5rem}.bottom-0{bottom:0px}.left-0{left:0px}.right-2{right:0.5rem}.right-3{right:0.75rem}.right-4{right:1rem}.top-2{top:0.5rem}.top-3{top:0.75rem}.top-4{top:1rem}.top-6{top:1.5rem}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-50{z-index:50}.-mx-4{margin-left:-1rem;margin-right:-1rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.ml-4{margin-left:1rem}.mr-1{margin-right:0.25rem}.mr-1\.5{margin-right:0.375rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.aspect-square{aspect-ratio:1 / 1}.h-12{height:3rem}.h-16{height:4rem}.h-32{height:8rem}.h-48{height:12rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-full{height:100%}.h-screen{height:100vh}.w-1\/2{width:50%}.w-1\/3{width:33.333333%}.w-12{width:3rem}.w-16{width:4rem}.w-24{width:6rem}.w-32{width:8rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.min-w-0{min-width:0px}.min-w-\[4\.5rem\]{min-width:4.5rem}.max-w-\[70\%\]{max-width:70%}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.shrink-0{flex-shrink:0}.rotate-12{--tw-rotate:12deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.snap-x{scroll-snap-type:x var(--tw-scroll-snap-strictness)}.snap-center{scroll-snap-align:center}.appearance-none{-webkit-appearance:none;appearance:none}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.-space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-0.5rem * var(--tw-space-x-reverse));margin-left:calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.scroll-smooth{scroll-behavior:smooth}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-pre-line{white-space:pre-line}.break-words{overflow-wrap:break-word}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-b-4{border-bottom-width:4px}.border-l-2{border-left-width:2px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-sky-100{--tw-border-opacity:1;border-color:rgb(224 242 254 / var(--tw-border-opacity, 1))}.border-sky-300{--tw-border-opacity:1;border-color:rgb(125 211 252 / var(--tw-border-opacity, 1))}.border-sky-400{--tw-border-opacity:1;border-color:rgb(56 189 248 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-50{--tw-border-opacity:1;border-color:rgb(248 250 252 / var(--tw-border-opacity, 1))}.border-white\/50{border-color:rgb(255 255 255 / 0.5)}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-black\/30{background-color:rgb(0 0 0 / 0.3)}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-rose-100{--tw-bg-opacity:1;background-color:rgb(255 228 230 / var(--tw-bg-opacity, 1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254 / var(--tw-bg-opacity, 1))}.bg-sky-400{--tw-bg-opacity:1;background-color:rgb(56 189 248 / var(--tw-bg-opacity, 1))}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-white\/50{background-color:rgb(255 255 255 / 0.5)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black\/60{--tw-gradient-from:rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-blue-500{--tw-gradient-from:#3b82f6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(59 130 246 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-400{--tw-gradient-from:#38bdf8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(56 189 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-indigo-600{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.to-sky-400{--tw-gradient-to:#38bdf8 var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-10{padding-bottom:2.5rem}.pb-2{padding-bottom:0.5rem}.pb-20{padding-bottom:5rem}.pb-24{padding-bottom:6rem}.pb-28{padding-bottom:7rem}.pl-2{padding-left:0.5rem}.pl-4{padding-left:1rem}.pl-6{padding-left:1.5rem}.pt-12{padding-top:3rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.leading-7{line-height:1.75rem}.leading-normal{line-height:1.5}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:0.05em}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-700\/70{color:rgb(180 83 9 / 0.7)}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-sky-500{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-sky-800{--tw-text-opacity:1;color:rgb(7 89 133 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.placeholder-white\/70::placeholder{color:rgb(255 255 255 / 0.7)}.opacity-50{opacity:0.5}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.shadow-\[0_-5px_20px_rgba\(0\2c 0\2c 0\2c 0\.03\)\]{--tw-shadow:0 -5px 20px rgba(0,0,0,0.03);--tw-shadow-colored:0 -5px 20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-white{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity, 1))}.blur-2xl{--tw-blur:blur(40px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.last\:border-0:last-child{border-width:0px}.hover\:border-sky-300:hover{--tw-border-opacity:1;border-color:rgb(125 211 252 / var(--tw-border-opacity, 1))}.hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-300:hover{--tw-bg-opacity:1;background-color:rgb(203 213 225 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:text-amber-500:hover{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.hover\:text-rose-500:hover{--tw-text-opacity:1;color:rgb(244 63 94 / var(--tw-text-opacity, 1))}.hover\:text-rose-600:hover{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.hover\:text-sky-500:hover{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-sky-200:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(186 230 253 / var(--tw-ring-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:bg-black\/50:active{background-color:rgb(0 0 0 / 0.5)}.active\:bg-slate-50:active{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:w-auto{width:auto}}@media (min-width: 768px){.md\:text-5xl{font-size:3rem;line-height:1}}</style></head>
+<body>
+
+<div id="app" class="h-screen flex flex-col overflow-hidden relative" data-v-app=""><!-- Header --><header class="bg-white/80 backdrop-blur-md z-20 px-4 py-3 shadow-sm flex items-center justify-between shrink-0 safe-top"><h1 class="text-xl font-bold text-sky-800 tracking-wider flex items-center truncate max-w-[70%]"><i class="fa-solid fa-plane-departure mr-2 text-sky-400 animate-pulse"></i><input class="input-bare bg-white/50 border-b border-sky-300"></h1><div class="flex items-center gap-2"><!-- Edit Toggle --><button class="text-xs font-bold px-3 py-1 rounded-full shadow-sm transition-colors bg-amber-500 text-white"><i class="fa-solid fa-pen-to-square mr-1"></i>完成</button><!--v-if--></div></header><!-- Main Content Area --><main class="flex-1 overflow-y-auto p-4 pb-28 relative scroll-smooth"><!-- Global Settings Panel (Only in Edit Mode) --><div class="bg-amber-50 border-2 border-amber-200 rounded-3xl p-5 mb-5 space-y-4"><h3 class="font-bold text-amber-800 border-b border-amber-200 pb-2"><i class="fa-solid fa-sliders mr-2"></i>全域設定</h3><div class="grid grid-cols-2 gap-4"><div><label class="text-xs font-bold text-amber-700">出發日期</label><input type="date" class="w-full bg-white rounded-lg p-2 text-sm border border-amber-200"></div><div><label class="text-xs font-bold text-amber-700">旅遊天數</label><input type="number" class="w-full bg-white rounded-lg p-2 text-sm border border-amber-200"></div></div><div class="grid grid-cols-2 gap-4"><div><label class="text-xs font-bold text-amber-700">目標幣別 (代號)</label><input class="w-full bg-white rounded-lg p-2 text-sm border border-amber-200" placeholder="JPY"></div><div><label class="text-xs font-bold text-amber-700">匯率 (1外幣=多少台幣)</label><input type="number" step="0.001" class="w-full bg-white rounded-lg p-2 text-sm border border-amber-200"></div></div><div><label class="text-xs font-bold text-amber-700">天氣預報地點</label><select class="w-full bg-white rounded-lg p-2 text-sm border border-amber-200"><optgroup label="日本 (Japan)"><option value="Tokyo">東京 (Tokyo)</option><option value="Osaka">大阪 (Osaka)</option><option value="Kyoto">京都 (Kyoto)</option><option value="Sapporo">札幌 (Sapporo)</option><option value="Sendai">仙台 (Sendai)</option><option value="Fukuoka">福岡 (Fukuoka)</option><option value="Okinawa">沖繩 (Okinawa)</option></optgroup><optgroup label="亞洲 (Asia)"><option value="Taipei">台北 (Taipei)</option><option value="Kaohsiung">高雄 (Kaohsiung)</option><option value="HongKong">香港 (Hong Kong)</option><option value="Macau">澳門 (Macau)</option><option value="Seoul">首爾 (Seoul)</option><option value="Busan">釜山 (Busan)</option><option value="Jeju">濟州島 (Jeju)</option><option value="Bangkok">曼谷 (Bangkok)</option><option value="ChiangMai">清邁 (Chiang Mai)</option><option value="Singapore">新加坡 (Singapore)</option><option value="Bali">峇里島 (Bali)</option><option value="Hanoi">河內 (Hanoi)</option><option value="HoChiMinh">胡志明 (Ho Chi Minh)</option><option value="Manila">馬尼拉 (Manila)</option></optgroup><optgroup label="歐洲 (Europe)"><option value="London">倫敦 (London)</option><option value="Paris">巴黎 (Paris)</option><option value="Rome">羅馬 (Rome)</option><option value="Venice">威尼斯 (Venice)</option><option value="Barcelona">巴塞隆納 (Barcelona)</option><option value="Berlin">柏林 (Berlin)</option><option value="Amsterdam">阿姆斯特丹 (Amsterdam)</option><option value="Prague">布拉格 (Prague)</option><option value="Vienna">維也納 (Vienna)</option><option value="Budapest">布達佩斯 (Budapest)</option><option value="Reykjavik">雷克雅維克 (Reykjavik)</option></optgroup><optgroup label="北美 (North America)"><option value="NewYork">紐約 (New York)</option><option value="LosAngeles">洛杉磯 (LA)</option><option value="SanFrancisco">舊金山 (SF)</option><option value="LasVegas">拉斯維加斯 (Las Vegas)</option><option value="Vancouver">溫哥華 (Vancouver)</option><option value="Toronto">多倫多 (Toronto)</option></optgroup><optgroup label="大洋洲 (Oceania)"><option value="Sydney">雪梨 (Sydney)</option><option value="Melbourne">墨爾本 (Melbourne)</option><option value="Auckland">奧克蘭 (Auckland)</option><option value="Queenstown">皇后鎮 (Queenstown)</option></optgroup><option value="Custom">自訂 (手動輸入)</option></select></div><div><label class="text-xs font-bold text-amber-700">求生語言</label><select class="w-full bg-white rounded-lg p-2 text-sm border border-amber-200"><option value="JP">日文 (Japanese)</option><option value="EN">英文 (English)</option><option value="KR">韓文 (Korean)</option></select></div><button class="w-full bg-green-600 text-white py-3 rounded-xl font-bold shadow-md hover:bg-green-700 active:scale-95 transition-transform flex items-center justify-center"><i class="fa-solid fa-download mr-2"></i> 儲存並下載 App 檔案 </button><p class="text-[10px] text-amber-700/70 text-center">※ 下載後的 HTML 檔案包含您編輯的所有內容，可直接分享給親友。</p></div><!-- HOME TAB --><div class="space-y-5"><!-- Weather Widget --><div class="bg-gradient-to-br from-blue-500 to-sky-400 rounded-3xl p-5 text-white shadow-lg relative overflow-hidden group"><div class="absolute -right-6 -top-6 bg-white/20 w-32 h-32 rounded-full blur-2xl"></div><div class="flex justify-between items-start relative z-10"><div><div class="text-xs font-bold bg-white/20 inline-block px-2 py-1 rounded-lg mb-2"><i class="fa-solid fa-location-dot mr-1"></i><span>自訂地點 (2月)</span></div><!-- Custom Weather Edit Mode (Also for DB override) --><div><div class="flex items-end gap-1"><input class="bg-transparent border-b border-white/50 w-16 text-4xl font-bold text-white outline-none" placeholder="--"><span class="text-xl">°C</span></div><input class="bg-transparent border-b border-white/50 w-full text-sm font-medium text-white/90 outline-none mt-1" placeholder="選擇地點"></div></div><div class="text-5xl opacity-90"><i class="fa-solid fa-temperature-half"></i></div></div></div><!-- Calculator --><div class="bg-white rounded-3xl p-5 shadow-sm relative overflow-hidden"><div class="flex justify-between items-center mb-4 relative z-10"><h2 class="font-bold text-slate-700"><i class="fa-solid fa-calculator mr-2 text-sky-500"></i>匯率換算</h2><span class="text-xs font-bold text-slate-400 bg-slate-100 px-2 py-1 rounded">1 JPY = 0.21 TWD</span></div><div class="flex gap-3 items-center relative z-10"><div class="flex-1"><label class="block text-xs text-slate-400 font-bold mb-1 ml-1">JPY</label><input type="number" class="w-full bg-slate-50 rounded-xl px-4 py-3 font-bold text-slate-700 focus:ring-2 focus:ring-sky-200 outline-none text-lg" placeholder="0"></div><div class="text-slate-300 pt-5"><i class="fa-solid fa-arrow-right-arrow-left"></i></div><div class="flex-1"><label class="block text-xs text-slate-400 font-bold mb-1 ml-1">TWD</label><input type="number" class="w-full bg-slate-50 rounded-xl px-4 py-3 font-bold text-slate-700 focus:ring-2 focus:ring-sky-200 outline-none text-lg" placeholder="0"></div></div></div><!-- Action Buttons --><div class="grid grid-cols-2 gap-4"><button class="bg-emerald-500 text-white p-5 rounded-3xl shadow-md flex flex-col items-center justify-center gap-2 active:scale-95 transition-transform"><i class="fa-solid fa-clipboard-check text-4xl mb-1"></i><span class="font-bold text-lg">行前確認</span></button><button class="bg-amber-500 text-white p-5 rounded-3xl shadow-md flex flex-col items-center justify-center gap-2 active:scale-95 transition-transform"><i class="fa-solid fa-comment-dots text-4xl mb-1"></i><span class="font-bold text-lg">求生語言</span><span class="text-[10px] bg-black/20 px-2 py-0.5 rounded-full">JP</span></button></div></div><!-- PLAN TAB --><!--v-if--><!-- WALLET TAB --><!--v-if--></main><!-- Bottom Navigation --><nav class="glass z-30 shadow-[0_-5px_20px_rgba(0,0,0,0.03)] shrink-0 pb-safe w-full fixed bottom-0 left-0"><div class="flex justify-around items-center h-16 safe-bottom"><button class="flex-1 flex flex-col items-center justify-center h-full space-y-1 active:scale-95 transition-transform group"><div class="text-xl px-4 py-1 rounded-full transition-colors text-sky-500 bg-sky-50"><i class="fa-solid fa-house"></i></div><span class="text-[10px] font-bold text-sky-600">主頁</span></button><button class="flex-1 flex flex-col items-center justify-center h-full space-y-1 active:scale-95 transition-transform group"><div class="text-xl px-4 py-1 rounded-full transition-colors text-slate-300"><i class="fa-solid fa-map-location-dot"></i></div><span class="text-[10px] font-bold text-slate-400">行程</span></button><button class="flex-1 flex flex-col items-center justify-center h-full space-y-1 active:scale-95 transition-transform group"><div class="text-xl px-4 py-1 rounded-full transition-colors text-slate-300"><i class="fa-solid fa-wallet"></i></div><span class="text-[10px] font-bold text-slate-400">記帳</span></button></div></nav><!-- 1. CHECKLIST MODAL (With Edit) --><!--v-if--><!-- 2. JAPANESE MODAL --><!--v-if--><!-- 3. PLAN DETAIL / EDIT MODAL --><!--v-if--><!--v-if--></div>
+
+<script>
+const { createApp, ref, computed, onMounted, watch, nextTick } = Vue;
+
+Chart.register(ChartDataLabels);
+
+// --- 1. GLOBAL WEATHER DATA (Major Cities - 12 Months) ---
+// Simplified average high temps for general reference
+const WEATHER_DB = {
+    'Tokyo': { 
+        1: {t:10, i:'fa-solid fa-sun', d:'晴冷'}, 2: {t:11, i:'fa-solid fa-cloud-sun', d:'寒冷'}, 3: {t:14, i:'fa-solid fa-seedling', d:'櫻花季'}, 4: {t:19, i:'fa-solid fa-sun', d:'溫暖'}, 
+        5: {t:23, i:'fa-solid fa-sun', d:'舒適'}, 6: {t:26, i:'fa-solid fa-cloud-rain', d:'梅雨'}, 7: {t:30, i:'fa-solid fa-fire', d:'炎熱'}, 8: {t:31, i:'fa-solid fa-fire', d:'酷熱'}, 
+        9: {t:27, i:'fa-solid fa-cloud-rain', d:'颱風季'}, 10: {t:22, i:'fa-solid fa-cloud-sun', d:'秋涼'}, 11: {t:17, i:'fa-solid fa-leaf', d:'楓紅'}, 12: {t:12, i:'fa-solid fa-wind', d:'寒冷'} 
+    },
+    'Osaka': { 
+        1: {t:9, i:'fa-solid fa-cloud', d:'寒冷'}, 2: {t:10, i:'fa-solid fa-cloud-sun', d:'多雲'}, 3: {t:14, i:'fa-solid fa-seedling', d:'回暖'}, 4: {t:20, i:'fa-solid fa-sun', d:'舒適'},
+        5: {t:25, i:'fa-solid fa-sun', d:'初夏'}, 6: {t:28, i:'fa-solid fa-cloud-rain', d:'悶熱'}, 7: {t:32, i:'fa-solid fa-fire', d:'盛夏'}, 8: {t:33, i:'fa-solid fa-fire', d:'殘暑'},
+        9: {t:29, i:'fa-solid fa-cloud', d:'舒適'}, 10: {t:23, i:'fa-solid fa-sun', d:'秋高氣爽'}, 11: {t:17, i:'fa-solid fa-leaf', d:'涼爽'}, 12: {t:12, i:'fa-solid fa-wind', d:'冷'}
+    },
+    'Seoul': { 
+        1: {t:-2, i:'fa-regular fa-snowflake', d:'嚴寒'}, 2: {t:1, i:'fa-solid fa-snowflake', d:'寒冷'}, 3: {t:7, i:'fa-solid fa-sun', d:'早春'}, 4: {t:14, i:'fa-solid fa-seedling', d:'溫暖'},
+        5: {t:20, i:'fa-solid fa-sun', d:'舒適'}, 6: {t:24, i:'fa-solid fa-cloud-sun', d:'初夏'}, 7: {t:27, i:'fa-solid fa-cloud-rain', d:'雨季'}, 8: {t:28, i:'fa-solid fa-sun', d:'濕熱'},
+        9: {t:24, i:'fa-solid fa-wind', d:'涼爽'}, 10: {t:18, i:'fa-solid fa-leaf', d:'秋葉'}, 11: {t:9, i:'fa-solid fa-wind', d:'冷'}, 12: {t:1, i:'fa-regular fa-snowflake', d:'冰凍'}
+    },
+    'Bangkok': { 
+        1: {t:32, i:'fa-solid fa-sun', d:'涼季'}, 2: {t:33, i:'fa-solid fa-sun', d:'熱'}, 3: {t:34, i:'fa-solid fa-fire', d:'酷熱'}, 4: {t:35, i:'fa-solid fa-fire', d:'最熱'},
+        5: {t:34, i:'fa-solid fa-cloud-showers-heavy', d:'雨季始'}, 6: {t:33, i:'fa-solid fa-cloud-rain', d:'多雨'}, 7: {t:33, i:'fa-solid fa-cloud-rain', d:'潮濕'}, 8: {t:33, i:'fa-solid fa-cloud-rain', d:'雨季'},
+        9: {t:32, i:'fa-solid fa-water', d:'暴雨'}, 10: {t:32, i:'fa-solid fa-cloud-sun', d:'雨季末'}, 11: {t:31, i:'fa-solid fa-sun', d:'舒適'}, 12: {t:31, i:'fa-solid fa-sun', d:'最佳旅遊'}
+    },
+    'Sapporo': { 
+        1: {t:-4, i:'fa-regular fa-snowflake', d:'豪雪'}, 2: {t:-3, i:'fa-solid fa-snowflake', d:'雪祭'}, 3: {t:1, i:'fa-solid fa-snowflake', d:'融雪'}, 4: {t:8, i:'fa-solid fa-cloud-sun', d:'早春'},
+        5: {t:14, i:'fa-solid fa-seedling', d:'櫻花'}, 6: {t:18, i:'fa-solid fa-sun', d:'爽快'}, 7: {t:22, i:'fa-solid fa-sun', d:'薰衣草'}, 8: {t:24, i:'fa-solid fa-sun', d:'短夏'},
+        9: {t:20, i:'fa-solid fa-cloud', d:'初秋'}, 10: {t:13, i:'fa-solid fa-leaf', d:'紅葉'}, 11: {t:6, i:'fa-solid fa-wind', d:'初雪'}, 12: {t:-1, i:'fa-regular fa-snowflake', d:'根雪'}
+    },
+    'London': { 
+        1: {t:8, i:'fa-solid fa-cloud-rain', d:'陰冷'}, 2: {t:8, i:'fa-solid fa-cloud', d:'寒冷'}, 3: {t:11, i:'fa-solid fa-cloud-sun', d:'多變'}, 4: {t:14, i:'fa-solid fa-seedling', d:'春意'},
+        5: {t:17, i:'fa-solid fa-sun', d:'舒適'}, 6: {t:20, i:'fa-solid fa-sun', d:'美好'}, 7: {t:22, i:'fa-solid fa-sun', d:'夏日'}, 8: {t:22, i:'fa-solid fa-sun', d:'旅遊季'},
+        9: {t:19, i:'fa-solid fa-cloud', d:'涼爽'}, 10: {t:15, i:'fa-solid fa-wind', d:'落葉'}, 11: {t:11, i:'fa-solid fa-cloud-rain', d:'潮濕'}, 12: {t:9, i:'fa-solid fa-snowflake', d:'聖誕'}
+    },
+    'NewYork': { 
+        1: {t:3, i:'fa-solid fa-snowflake', d:'嚴寒'}, 2: {t:5, i:'fa-solid fa-snowflake', d:'雪'}, 3: {t:9, i:'fa-solid fa-wind', d:'冷'}, 4: {t:15, i:'fa-solid fa-seedling', d:'春暖'},
+        5: {t:21, i:'fa-solid fa-sun', d:'舒適'}, 6: {t:26, i:'fa-solid fa-sun', d:'初夏'}, 7: {t:29, i:'fa-solid fa-sun', d:'熱'}, 8: {t:28, i:'fa-solid fa-sun', d:'濕熱'},
+        9: {t:24, i:'fa-solid fa-cloud', d:'涼爽'}, 10: {t:18, i:'fa-solid fa-leaf', d:'秋色'}, 11: {t:12, i:'fa-solid fa-wind', d:'冷'}, 12: {t:6, i:'fa-solid fa-snowflake', d:'節慶'}
+    },
+    'Sendai': { 
+        1: {t:5, i:'fa-solid fa-cloud-sun', d:'寒冷乾燥'}, 2: {t:5, i:'fa-solid fa-snowflake', d:'偶雪'}, 3: {t:9, i:'fa-solid fa-cloud', d:'回暖'}, 4: {t:15, i:'fa-solid fa-seedling', d:'櫻花'},
+        5: {t:20, i:'fa-solid fa-sun', d:'新綠'}, 6: {t:23, i:'fa-solid fa-cloud-rain', d:'梅雨'}, 7: {t:26, i:'fa-solid fa-sun', d:'七夕'}, 8: {t:28, i:'fa-solid fa-sun', d:'炎熱'},
+        9: {t:24, i:'fa-solid fa-cloud', d:'颱風'}, 10: {t:19, i:'fa-solid fa-leaf', d:'秋高氣爽'}, 11: {t:13, i:'fa-solid fa-wind', d:'晚秋'}, 12: {t:8, i:'fa-solid fa-snowflake', d:'初冬'}
+    },
+    'Taipei': { 1: {t:16, i:'fa-solid fa-cloud-rain', d:'濕冷'}, 2: {t:17, i:'fa-solid fa-cloud', d:'陰涼'}, 3: {t:20, i:'fa-solid fa-sun', d:'回暖'}, 4: {t:24, i:'fa-solid fa-sun', d:'舒適'}, 5: {t:27, i:'fa-solid fa-cloud-rain', d:'梅雨'}, 6: {t:30, i:'fa-solid fa-fire', d:'悶熱'}, 7: {t:33, i:'fa-solid fa-fire', d:'酷熱'}, 8: {t:33, i:'fa-solid fa-fire', d:'酷熱'}, 9: {t:30, i:'fa-solid fa-cloud', d:'依然熱'}, 10: {t:26, i:'fa-solid fa-wind', d:'涼爽'}, 11: {t:22, i:'fa-solid fa-cloud', d:'舒適'}, 12: {t:18, i:'fa-solid fa-cloud-rain', d:'濕冷'} },
+    'Sydney': { 1: {t:26, i:'fa-solid fa-sun', d:'夏日'}, 2: {t:26, i:'fa-solid fa-sun', d:'炎熱'}, 3: {t:25, i:'fa-solid fa-cloud-sun', d:'舒適'}, 4: {t:22, i:'fa-solid fa-cloud', d:'秋意'}, 5: {t:20, i:'fa-solid fa-wind', d:'涼爽'}, 6: {t:17, i:'fa-solid fa-cloud-rain', d:'冬季'}, 7: {t:16, i:'fa-solid fa-cloud', d:'寒冷'}, 8: {t:18, i:'fa-solid fa-sun', d:'回暖'}, 9: {t:20, i:'fa-solid fa-seedling', d:'春暖'}, 10: {t:22, i:'fa-solid fa-sun', d:'舒適'}, 11: {t:24, i:'fa-solid fa-sun', d:'溫暖'}, 12: {t:25, i:'fa-solid fa-sun', d:'聖誕夏'} },
+    'Paris': { 1: {t:7, i:'fa-solid fa-cloud', d:'寒冷'}, 2: {t:8, i:'fa-solid fa-cloud-rain', d:'陰雨'}, 3: {t:12, i:'fa-solid fa-sun', d:'春初'}, 4: {t:15, i:'fa-solid fa-seedling', d:'花開'}, 5: {t:19, i:'fa-solid fa-sun', d:'舒適'}, 6: {t:22, i:'fa-solid fa-sun', d:'宜人'}, 7: {t:25, i:'fa-solid fa-sun', d:'熱'}, 8: {t:24, i:'fa-solid fa-sun', d:'渡假'}, 9: {t:21, i:'fa-solid fa-cloud', d:'涼爽'}, 10: {t:16, i:'fa-solid fa-leaf', d:'落葉'}, 11: {t:11, i:'fa-solid fa-wind', d:'冷'}, 12: {t:8, i:'fa-solid fa-snowflake', d:'冬'} }
+};
+
+const CITY_NAMES = {
+    'Tokyo': '東京', 'Osaka': '大阪', 'Seoul': '首爾', 'Bangkok': '曼谷', 'Taipei': '台北', 'Singapore': '新加坡', 'Sapporo': '札幌', 'Sendai': '仙台',
+    'London': '倫敦', 'Paris': '巴黎', 'NewYork': '紐約', 'LosAngeles': '洛杉磯', 'Sydney': '雪梨', 'Kyoto': '京都', 'Fukuoka': '福岡', 'Okinawa': '沖繩',
+    'Kaohsiung': '高雄', 'HongKong': '香港', 'Macau': '澳門', 'Busan': '釜山', 'Jeju': '濟州島', 'ChiangMai': '清邁', 'Bali': '峇里島', 'Hanoi': '河內',
+    'HoChiMinh': '胡志明', 'Manila': '馬尼拉', 'Rome': '羅馬', 'Venice': '威尼斯', 'Barcelona': '巴塞隆納', 'Berlin': '柏林', 'Amsterdam': '阿姆斯特丹',
+    'Prague': '布拉格', 'Vienna': '維也納', 'Budapest': '布達佩斯', 'Reykjavik': '雷克雅維克', 'SanFrancisco': '舊金山', 'LasVegas': '拉斯維加斯',
+    'Vancouver': '溫哥華', 'Toronto': '多倫多', 'Melbourne': '墨爾本', 'Auckland': '奧克蘭', 'Queenstown': '皇后鎮'
+};
+
+// --- INITIAL LANGUAGE DATA (Complete) ---
+const INITIAL_LANG_DB = {
+    'JP': [
+        { id: 'restaurant', title: '餐廳用餐', icon: 'fa-solid fa-utensils', phrases: [{source:'中文菜單?', target:'中国語のメニューはありますか？', phonetic:'Chuugokugo no menyu wa arimasuka?'}, {source:'我不吃肉', target:'私は肉を食べません。', phonetic:'Watashi wa niku o tabemasen.'}, {source:'結帳', target:'お会計をお願いします。', phonetic:'Okaikei onegaishimasu.'}] },
+        { id: 'hotel', title: '住宿', icon: 'fa-solid fa-bed', phrases: [{source:'寄放行李', target:'荷物を預かってもらえますか？', phonetic:'Nimotsu o azukatte moraemasuka?'}, {source:'Check In', target:'チェックインをお願いします。', phonetic:'Chekkuin onegaishimasu.'}] },
+        { id: 'transport', title: '交通', icon: 'fa-solid fa-train', phrases: [{source:'去這個地方', target:'ここに行きたいです。', phonetic:'Koko ni ikitai desu.'}, {source:'這班車去...?', target:'この電車は...行きますか？', phonetic:'Kono densha wa...?'}] },
+        { id: 'shopping', title: '購物', icon: 'fa-solid fa-bag-shopping', phrases: [{source:'多少錢?', target:'いくらですか？', phonetic:'Ikura desuka?'}, {source:'免稅?', target:'免税できますか？', phonetic:'Menzei dekimasuka?'}] }
+    ],
+    'EN': [
+        { id: 'restaurant', title: '餐廳用餐', icon: 'fa-solid fa-utensils', phrases: [{source:'中文菜單?', target:'Do you have a Chinese menu?', phonetic:'-'}, {source:'我不吃肉', target:'I do not eat meat.', phonetic:'-'}, {source:'結帳', target:'Can I have the check?', phonetic:'-'}] },
+        { id: 'hotel', title: '住宿', icon: 'fa-solid fa-bed', phrases: [{source:'寄放行李', target:'Can I leave my luggage here?', phonetic:'-'}, {source:'Check In', target:'I would like to check in.', phonetic:'-'}] },
+        { id: 'transport', title: '交通', icon: 'fa-solid fa-train', phrases: [{source:'去這個地方', target:'I want to go to this place.', phonetic:'-'}, {source:'買票', target:'Where can I buy a ticket?', phonetic:'-'}] },
+        { id: 'shopping', title: '購物', icon: 'fa-solid fa-bag-shopping', phrases: [{source:'多少錢?', target:'How much is this?', phonetic:'-'}, {source:'能刷卡嗎?', target:'Do you accept credit cards?', phonetic:'-'}] }
+    ],
+    'KR': [
+        { id: 'restaurant', title: '餐廳用餐', icon: 'fa-solid fa-utensils', phrases: [{source:'中文菜單?', target:'중국어 메뉴판 있나요?', phonetic:'Jung-guk-eo menyu innayo?'}, {source:'我不吃肉', target:'저는 고기를 안 먹어요.', phonetic:'Jeoneun gogireul an meogeoyo.'}, {source:'結帳', target:'계산해 주세요.', phonetic:'Gyesan-hae juseyo.'}] },
+        { id: 'hotel', title: '住宿', icon: 'fa-solid fa-bed', phrases: [{source:'寄放行李', target:'짐을 맡길 수 있나요?', phonetic:'Jimeul matgil su innayo?'}, {source:'Check In', target:'체크인 부탁합니다.', phonetic:'Chekeuin butakamnida.'}] },
+        { id: 'transport', title: '交通', icon: 'fa-solid fa-train', phrases: [{source:'去這個地方', target:'여기로 가고 싶어요.', phonetic:'Yeogiro gago sipeoyo.'}, {source:'地鐵站?', target:'지하철역이 어디예요?', phonetic:'Jihacheoryeogi eodiyeyo?'}] },
+        { id: 'shopping', title: '購物', icon: 'fa-solid fa-bag-shopping', phrases: [{source:'多少錢?', target:'얼마예요?', phonetic:'Eolmayeyo?'}, {source:'免稅?', target:'면세 되나요?', phonetic:'Myeonse doenayo?'}] }
+    ]
+};
+
+createApp({
+    setup() {
+        const currentTab = ref('home');
+        const activeDay = ref(0);
+        const selectedItem = ref(null);
+        const editingItem = ref(null);
+        const isEditMode = ref(false);
+        const showAnalysis = ref(false);
+        const showChecklistModal = ref(false);
+        let editingItemRef = null;
+        
+        const japaneseLevel = ref(0);
+        const selectedCategory = ref(null);
+        const selectedPhrase = ref(null);
+
+        const calcForeign = ref('');
+        const calcTwd = ref('');
+        const newItemText = ref('');
+        const expenses = ref([]);
+        const confirmDeleteId = ref(null);
+        const notes = ref('');
+
+        const newExpense = ref({ dateStr: '', category: '', item: '', price: '' });
+
+        const analysisFilter = ref({ start: '', end: '', categories: ['food', 'transport', 'shopping', 'entertainment', 'misc'] });
+        let chartInstance = null;
+
+        // --- CORE CONFIG ---
+        const config = ref({
+            appTitle: '萬用旅遊神器',
+            startDate: '2026-01-19',
+            totalDays: 8,
+            currencyCode: 'JPY',
+            exchangeRate: 0.21,
+            weatherCity: 'Sendai',
+            customWeatherCity: '',
+            customTemp: '',
+            customDesc: '',
+            survivalLang: 'JP',
+            languageData: JSON.parse(JSON.stringify(INITIAL_LANG_DB)),
+            itinerary: [
+                { title: '出發日', location: '桃園 -> 目的地', stay: '機上/飯店', schedule: [] }
+            ]
+        });
+
+        const categories = [
+            { id: 'food', name: '飲食', icon: 'fa-solid fa-utensils', color: '#f59e0b' },
+            { id: 'transport', name: '交通', icon: 'fa-solid fa-train-subway', color: '#3b82f6' },
+            { id: 'shopping', name: '購物', icon: 'fa-solid fa-bag-shopping', color: '#ec4899' },
+            { id: 'entertainment', name: '娛樂', icon: 'fa-solid fa-ticket', color: '#8b5cf6' },
+            { id: 'misc', name: '雜支', icon: 'fa-solid fa-coins', color: '#64748b' },
+        ];
+
+        const checklist = ref([
+            { text: '護照 (有效期6個月以上)', checked: false },
+            { text: 'Visit Japan Web 填寫', checked: false },
+            { text: '網卡 / Roaming 開通', checked: false },
+            { text: '外幣現金', checked: false }
+        ]);
+
+        // COMPUTED
+        const generatedDateOptions = computed(() => {
+            const opts = [];
+            const start = new Date(config.value.startDate);
+            for(let i=0; i<config.value.totalDays; i++) {
+                const d = new Date(start);
+                d.setDate(start.getDate() + i);
+                const dateStr = d.toISOString().split('T')[0];
+                const month = d.getMonth() + 1;
+                const day = d.getDate();
+                opts.push({ label: `${month}/${day} (Day ${i})`, value: dateStr });
+            }
+            return opts;
+        });
+
+        const currentLangData = computed(() => {
+            return config.value.languageData[config.value.survivalLang] || config.value.languageData['EN'];
+        });
+
+        const getLangFont = computed(() => {
+            if(config.value.survivalLang === 'JP') return 'font-jp';
+            if(config.value.survivalLang === 'KR') return 'font-kr';
+            return '';
+        });
+
+        const isFormValid = computed(() => {
+            return newExpense.value.dateStr && newExpense.value.category && newExpense.value.item && newExpense.value.price;
+        });
+
+        const detectedLinks = computed(() => {
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            return notes.value.match(urlRegex) || [];
+        });
+
+        const filteredExpenses = computed(() => {
+            if (!analysisFilter.value.start || !analysisFilter.value.end) return [];
+            const start = new Date(analysisFilter.value.start).getTime();
+            const end = new Date(analysisFilter.value.end).getTime();
+            
+            return expenses.value.filter(e => {
+                const eDate = new Date(e.dateStr).getTime();
+                return eDate >= start && eDate <= end && analysisFilter.value.categories.includes(e.category);
+            });
+        });
+
+        const analysisTotal = computed(() => {
+            return filteredExpenses.value.reduce((sum, e) => sum + e.price, 0);
+        });
+
+        // METHODS
+        const toggleEditMode = () => {
+            isEditMode.value = !isEditMode.value;
+            if (!isEditMode.value) saveData();
+        };
+
+        const updateItineraryDays = () => {
+            const currentLen = config.value.itinerary.length;
+            const targetLen = parseInt(config.value.totalDays);
+            if (targetLen > currentLen) {
+                for(let i = currentLen; i < targetLen; i++) {
+                    config.value.itinerary.push({ title: `Day ${i}`, location: 'TBD', stay: 'TBD', schedule: [] });
+                }
+            } else if (targetLen < currentLen) {
+                if(confirm('減少天數將會刪除多餘的行程資料，確定嗎？')) {
+                    config.value.itinerary = config.value.itinerary.slice(0, targetLen);
+                } else {
+                    config.value.totalDays = currentLen;
+                }
+            }
+        };
+
+        const addDay = () => {
+             config.value.totalDays++;
+             updateItineraryDays();
+        };
+
+        const deleteDay = (idx) => {
+            if(confirm('確定刪除這一天嗎？')) {
+                config.value.itinerary.splice(idx, 1);
+                config.value.totalDays--;
+            }
+        };
+
+        const addCard = () => {
+            config.value.itinerary[activeDay.value].schedule.push({
+                time: '12:00', activity: '新行程', desc: '', highlight: false, noDetail: false, tags: []
+            });
+        };
+
+        const deleteCard = (idx) => {
+             if(confirm('刪除此卡片？')) config.value.itinerary[activeDay.value].schedule.splice(idx, 1);
+        };
+
+        const moveCard = (idx, dir) => {
+            const arr = config.value.itinerary[activeDay.value].schedule;
+            if (idx + dir < 0 || idx + dir >= arr.length) return;
+            const temp = arr[idx];
+            arr[idx] = arr[idx+dir];
+            arr[idx+dir] = temp;
+        };
+
+        const openDetail = (item) => { selectedItem.value = JSON.parse(JSON.stringify(item)); };
+        const editCard = (item) => { editingItem.value = JSON.parse(JSON.stringify(item)); editingItemRef = item; };
+        const saveCardEdit = () => { if(editingItemRef) { Object.assign(editingItemRef, editingItem.value); editingItem.value = null; editingItemRef = null; saveData(); } };
+        const closeDetail = () => { selectedItem.value = null; editingItem.value = null; editingItemRef = null; };
+        
+        const addSubItem = () => { if(!editingItem.value.subItems) editingItem.value.subItems = []; editingItem.value.subItems.push({ name: '新項目', desc: '' }); };
+        const removeSubItem = (idx) => { editingItem.value.subItems.splice(idx, 1); };
+
+        const getTabName = (id) => { if (id === 'home') return '主頁面板'; if (id === 'wallet') return '記帳分析'; return ''; };
+        const getDayDate = (idx) => { const s=new Date(config.value.startDate); s.setDate(s.getDate()+idx); return `${s.getMonth()+1}/${s.getDate()}`; };
+        const getMonth = (idx) => { const s=new Date(config.value.startDate); s.setDate(s.getDate()+idx); return s.getMonth()+1; };
+        
+        const getCityName = (key) => CITY_NAMES[key] || key;
+
+        const getWeather = (idx) => {
+            if (config.value.weatherCity === 'Custom') {
+                return { temp: config.value.customTemp || '--', icon: 'fa-solid fa-cloud', desc: config.value.customDesc || '自訂天氣' };
+            }
+            const start = new Date(config.value.startDate);
+            start.setDate(start.getDate() + idx);
+            const month = start.getMonth() + 1;
+            const cityData = WEATHER_DB[config.value.weatherCity];
+            if (cityData) {
+                return cityData[month] || cityData[1] || { temp: '?', icon: 'fa-solid fa-cloud', desc: '無資料' };
+            }
+            return { temp: '--', icon: 'fa-solid fa-temperature-half', desc: '選擇地點' };
+        };
+
+        const getPlanIcon = (activity) => {
+            if (activity.includes('機場') || activity.includes('飛機')) return 'fa-solid fa-plane';
+            if (activity.includes('溫泉')) return 'fa-solid fa-hot-tub-person';
+            if (activity.includes('樹冰') || activity.includes('雪')) return 'fa-regular fa-snowflake';
+            if (activity.includes('神社') || activity.includes('寺')) return 'fa-solid fa-torii-gate';
+            if (activity.includes('牛') || activity.includes('餐') || activity.includes('麵')) return 'fa-solid fa-utensils';
+            if (activity.includes('車') || activity.includes('巴士')) return 'fa-solid fa-bus';
+            return 'fa-solid fa-location-dot';
+        };
+
+        const getCatName = (id) => categories.find(c => c.id === id).name;
+        const getCatIcon = (id) => categories.find(c => c.id === id).icon;
+
+        const updateTwd = () => { if (calcForeign.value === '') calcTwd.value = ''; else calcTwd.value = (parseFloat(calcForeign.value) * config.value.exchangeRate).toFixed(0); };
+        const updateForeign = () => { if (calcTwd.value === '') calcForeign.value = ''; else calcForeign.value = (parseFloat(calcTwd.value) / config.value.exchangeRate).toFixed(0); };
+
+        const addExpense = () => {
+            if (!isFormValid.value) return;
+            expenses.value.unshift({ id: Date.now(), dateStr: newExpense.value.dateStr, category: newExpense.value.category, item: newExpense.value.item, price: parseFloat(newExpense.value.price), twd: parseFloat(newExpense.value.price) * config.value.exchangeRate });
+            saveData(); newExpense.value.item = ''; newExpense.value.price = '';
+        };
+
+        const handleDelete = (id) => {
+            if (confirmDeleteId.value === id) { const idx = expenses.value.findIndex(e => e.id === id); if (idx !== -1) expenses.value.splice(idx, 1); saveData(); confirmDeleteId.value = null; } 
+            else { confirmDeleteId.value = id; setTimeout(() => { if (confirmDeleteId.value === id) confirmDeleteId.value = null; }, 3000); }
+        };
+
+        const handleImageUpload = (e) => { /* Placeholder */ };
+
+        const toggleCheck = (idx) => { checklist.value[idx].checked = !checklist.value[idx].checked; saveData(); };
+        const addChecklistItem = () => { if(newItemText.value) { checklist.value.push({ text: newItemText.value, checked: false }); newItemText.value = ''; saveData(); } };
+        const deleteChecklistItem = (idx) => { checklist.value.splice(idx, 1); saveData(); };
+        const saveNotes = () => saveData();
+
+        const openJpCategory = (cat) => { selectedCategory.value = cat; japaneseLevel.value = 2; };
+        const openJpPhrase = (p) => { selectedPhrase.value = p; japaneseLevel.value = 3; };
+        
+        const addJpCategory = () => {
+             const title = prompt('請輸入新分類名稱 (中文):');
+             if(!title) return;
+             const lang = config.value.survivalLang;
+             if(!config.value.languageData[lang]) config.value.languageData[lang] = [];
+             config.value.languageData[lang].push({ id: Date.now(), title, icon: 'fa-solid fa-circle', phrases: [] });
+             saveData();
+        };
+        const deleteJpCategory = (idx) => {
+             if(confirm('確定刪除此分類？')) {
+                 config.value.languageData[config.value.survivalLang].splice(idx, 1);
+                 saveData();
+             }
+        };
+        const addJpPhrase = () => {
+             const source = prompt('輸入中文 (自己看):');
+             const target = prompt('輸入外語 (給對方看):');
+             const phonetic = prompt('輸入拼音 (選填):') || '';
+             if(source && target) {
+                 selectedCategory.value.phrases.push({ source, target, phonetic });
+                 saveData();
+             }
+        };
+        const deleteJpPhrase = (idx) => {
+             if(confirm('刪除此語句？')) {
+                 selectedCategory.value.phrases.splice(idx, 1);
+                 saveData();
+             }
+        };
+
+        const updateChart = () => {
+            if (!showAnalysis.value) return;
+            const ctx = document.getElementById('expenseChart');
+            if (!ctx) return;
+            const dataMap = {};
+            analysisFilter.value.categories.forEach(catId => dataMap[catId] = 0);
+            filteredExpenses.value.forEach(e => { if (dataMap[e.category] !== undefined) dataMap[e.category] += e.price; });
+            const labels = categories.filter(c => analysisFilter.value.categories.includes(c.id)).map(c => c.name);
+            const data = categories.filter(c => analysisFilter.value.categories.includes(c.id)).map(c => dataMap[c.id]);
+            const bgColors = categories.filter(c => analysisFilter.value.categories.includes(c.id)).map(c => c.color);
+            if (chartInstance) chartInstance.destroy();
+            chartInstance = new Chart(ctx, { type: 'doughnut', data: { labels: labels, datasets: [{ data: data, backgroundColor: bgColors, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' }, datalabels: { color: '#fff', font: { weight: 'bold' }, formatter: (value) => value === 0 ? '' : '¥' + value } } } });
+        };
+
+        watch(showAnalysis, (val) => { if (val) nextTick(updateChart); });
+        watch(analysisFilter, () => { if (showAnalysis.value) updateChart(); }, { deep: true });
+
+        const saveData = () => {
+            const data = { config: config.value, expenses: expenses.value, checklist: checklist.value, notes: notes.value };
+            localStorage.setItem('travel_gen_v6', JSON.stringify(data));
+        };
+        const loadData = () => {
+            if (window.EMBEDDED_DATA) {
+                try { const data = window.EMBEDDED_DATA; config.value = data.config; expenses.value = data.expenses; checklist.value = data.checklist; notes.value = data.notes; return; } catch(e) { console.error(e); }
+            }
+            const data = localStorage.getItem('travel_gen_v6');
+            if (data) {
+                const parsed = JSON.parse(data);
+                if(parsed.config) {
+                    if(!parsed.config.languageData) parsed.config.languageData = JSON.parse(JSON.stringify(INITIAL_LANG_DB));
+                    config.value = parsed.config;
+                }
+                expenses.value = parsed.expenses || [];
+                checklist.value = parsed.checklist || [];
+                notes.value = parsed.notes || '';
+            }
+        };
+
+        const downloadApp = () => {
+            let htmlContent = document.documentElement.outerHTML;
+            const dataToSave = { config: config.value, expenses: expenses.value, checklist: checklist.value, notes: notes.value };
+            const scriptString = `window.EMBEDDED_DATA = {"config":{"appTitle":"萬用旅遊神器","startDate":"2026-02-01","totalDays":5,"currencyCode":"JPY","exchangeRate":0.21,"weatherCity":"Macau","customWeatherCity":"","customTemp":"","customDesc":"","survivalLang":"JP","languageData":{"JP":[{"id":"restaurant","title":"餐廳用餐","icon":"fa-solid fa-utensils","phrases":[{"source":"中文菜單?","target":"中国語のメニューはありますか？","phonetic":"Chuugokugo no menyu wa arimasuka?"},{"source":"我不吃肉","target":"私は肉を食べません。","phonetic":"Watashi wa niku o tabemasen."},{"source":"結帳","target":"お会計をお願いします。","phonetic":"Okaikei onegaishimasu."}]},{"id":"hotel","title":"住宿","icon":"fa-solid fa-bed","phrases":[{"source":"寄放行李","target":"荷物を預かってもらえますか？","phonetic":"Nimotsu o azukatte moraemasuka?"},{"source":"Check In","target":"チェックインをお願いします。","phonetic":"Chekkuin onegaishimasu."}]},{"id":"transport","title":"交通","icon":"fa-solid fa-train","phrases":[{"source":"去這個地方","target":"ここに行きたいです。","phonetic":"Koko ni ikitai desu."},{"source":"這班車去...?","target":"この電車は...行きますか？","phonetic":"Kono densha wa...?"}]},{"id":"shopping","title":"購物","icon":"fa-solid fa-bag-shopping","phrases":[{"source":"多少錢?","target":"いくらですか？","phonetic":"Ikura desuka?"},{"source":"免稅?","target":"免税できますか？","phonetic":"Menzei dekimasuka?"}]}],"EN":[{"id":"restaurant","title":"餐廳用餐","icon":"fa-solid fa-utensils","phrases":[{"source":"中文菜單?","target":"Do you have a Chinese menu?","phonetic":"-"},{"source":"我不吃肉","target":"I do not eat meat.","phonetic":"-"},{"source":"結帳","target":"Can I have the check?","phonetic":"-"}]},{"id":"hotel","title":"住宿","icon":"fa-solid fa-bed","phrases":[{"source":"寄放行李","target":"Can I leave my luggage here?","phonetic":"-"},{"source":"Check In","target":"I would like to check in.","phonetic":"-"}]},{"id":"transport","title":"交通","icon":"fa-solid fa-train","phrases":[{"source":"去這個地方","target":"I want to go to this place.","phonetic":"-"},{"source":"買票","target":"Where can I buy a ticket?","phonetic":"-"}]},{"id":"shopping","title":"購物","icon":"fa-solid fa-bag-shopping","phrases":[{"source":"多少錢?","target":"How much is this?","phonetic":"-"},{"source":"能刷卡嗎?","target":"Do you accept credit cards?","phonetic":"-"}]}],"KR":[{"id":"restaurant","title":"餐廳用餐","icon":"fa-solid fa-utensils","phrases":[{"source":"中文菜單?","target":"중국어 메뉴판 있나요?","phonetic":"Jung-guk-eo menyu innayo?"},{"source":"我不吃肉","target":"저는 고기를 안 먹어요.","phonetic":"Jeoneun gogireul an meogeoyo."},{"source":"結帳","target":"계산해 주세요.","phonetic":"Gyesan-hae juseyo."}]},{"id":"hotel","title":"住宿","icon":"fa-solid fa-bed","phrases":[{"source":"寄放行李","target":"짐을 맡길 수 있나요?","phonetic":"Jimeul matgil su innayo?"},{"source":"Check In","target":"체크인 부탁합니다.","phonetic":"Chekeuin butakamnida."}]},{"id":"transport","title":"交通","icon":"fa-solid fa-train","phrases":[{"source":"去這個地方","target":"여기로 가고 싶어요.","phonetic":"Yeogiro gago sipeoyo."},{"source":"地鐵站?","target":"지하철역이 어디예요?","phonetic":"Jihacheoryeogi eodiyeyo?"}]},{"id":"shopping","title":"購物","icon":"fa-solid fa-bag-shopping","phrases":[{"source":"多少錢?","target":"얼마예요?","phonetic":"Eolmayeyo?"},{"source":"免稅?","target":"면세 되나요?","phonetic":"Myeonse doenayo?"}]}]},"itinerary":[{"title":"出發日","location":"桃園 -> 目的地","stay":"機上/飯店","schedule":[]},{"title":"Day 1","location":"TBD","stay":"TBD","schedule":[]},{"title":"Day 2","location":"TBD","stay":"TBD","schedule":[]},{"title":"Day 3","location":"TBD","stay":"TBD","schedule":[]},{"title":"Day 4","location":"TBD","stay":"TBD","schedule":[]}]},"expenses":[],"checklist":[{"text":"護照 (有效期6個月以上)","checked":false},{"text":"Visit Japan Web 填寫","checked":false},{"text":"網卡 / Roaming 開通","checked":false},{"text":"外幣現金","checked":false}],"notes":""};`;
+            if (htmlContent.includes('window.EMBEDDED_DATA =')) { htmlContent = htmlContent.replace(/window\.EMBEDDED_DATA = .*?;/, scriptString); } 
+            else { htmlContent = htmlContent.replace('<script>', `<script>${scriptString}<\/script><script>`); }
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = `${config.value.appTitle || 'TravelApp'}.html`; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+        };
+
+        onMounted(() => loadData());
+
+        return {
+            currentTab, activeDay, selectedItem, showAnalysis, isEditMode,
+            expenses, newExpense, checklist, notes, config,
+            calcForeign, calcTwd,
+            toggleEditMode, updateItineraryDays, getDayDate, getWeather, getTabName, getMonth, getCityName,
+            openDetail, closeDetail, editCard, saveCardEdit, addDay, deleteDay, addCard, deleteCard, moveCard, addSubItem, removeSubItem, editingItem,
+            updateTwd, updateForeign,
+            generatedDateOptions, categories, isFormValid, getCatName, getCatIcon, getPlanIcon,
+            handleImageUpload, addExpense, handleDelete, toggleCheck, saveNotes, addChecklistItem, deleteChecklistItem, newItemText,
+            showChecklistModal, japaneseLevel, currentLangData, selectedCategory, selectedPhrase, openJpCategory, openJpPhrase, getLangFont,
+            addJpCategory, deleteJpCategory, addJpPhrase, deleteJpPhrase,
+            analysisFilter, analysisTotal, confirmDeleteId,
+            downloadApp
+        };
+    }
+}).mount('#app');
+</script>
+
+</body></html>
